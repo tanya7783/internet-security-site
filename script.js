@@ -9,7 +9,7 @@ document.querySelectorAll('.answer').forEach(answer => {
 document.getElementById('testForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
     let score = 0;
-        document.querySelectorAll('.question').forEach(question => {
+    document.querySelectorAll('.question').forEach(question => {
         const selectedAnswer = question.querySelector('.answer.selected');
         const answers = question.querySelectorAll('.answer');
         const correctAnswerText = question.querySelector('.correct-answer');
@@ -46,6 +46,7 @@ document.getElementById('testForm').addEventListener('submit', function(event) {
 
     startTimer(5 * 60); 
 });
+
 let timerInterval;
 function startTimer(duration) {
     let timer = duration, minutes, seconds;
@@ -66,7 +67,6 @@ function sendEmail() {
     window.location.href = "mailto:tania.hrynda@gmail.com";
 }
 
-
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();  
     const name = document.getElementById('name').value;
@@ -77,10 +77,8 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         const successMessage = document.getElementById('successMessage');
         successMessage.textContent = 'Ваше повідомлення успішно надіслано!';
         successMessage.style.display = 'block';
-                document.getElementById('contactForm').reset();  
+        document.getElementById('contactForm').reset();  
     } else {
         alert('Будь ласка, заповніть всі поля.');
     }
 });
-
-
