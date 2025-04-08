@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.answer').forEach(answer => {
+        answer.addEventListener('click', function() {
+            const answers = this.closest('.question').querySelectorAll('.answer');
+            answers.forEach(ans => ans.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+    
+    document.getElementById('testForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 document.querySelectorAll('.answer').forEach(answer => {
     answer.addEventListener('click', function() {
         const answers = this.closest('.question').querySelectorAll('.answer');
