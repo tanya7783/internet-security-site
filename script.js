@@ -82,3 +82,5 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         alert('Будь ласка, заповніть всі поля.');
     }
 });
+
+
