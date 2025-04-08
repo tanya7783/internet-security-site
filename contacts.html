@@ -9,7 +9,6 @@
 <body>
     <header>
         <h1>Контактна інформація</h1>
-         
         <nav>
             <ul>
                 <li><a href="index.html">Головна</a></li>
@@ -33,15 +32,15 @@
 
         <div class="contact-form">
             <h3>Напишіть нам</h3>
-            <form id="contactForm">
+            <form id="contactForm" autocomplete="on">
                 <label for="name">Ваше ім'я:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" autocomplete="name" required>
 
                 <label for="email">Ваш email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" autocomplete="email" required>
 
                 <label for="message">Повідомлення:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" autocomplete="off" required></textarea>
 
                 <button type="submit">Надіслати</button>
             </form>
