@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let timerInterval;
 
-    // Функція для таймера
     function startTimer(duration) {
         let timer = duration, minutes, seconds;
         timerInterval = setInterval(function () {
