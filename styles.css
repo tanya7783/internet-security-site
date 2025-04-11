@@ -10,6 +10,7 @@ body {
     color: #333;
     line-height: 1.6;
     font-size: 16px;
+    overflow-x: hidden; /* Запобігає горизонтальному скролінгу */
 }
 
 header {
@@ -228,6 +229,7 @@ button[type="submit"]:hover {
     }
 }
 
+/* Адаптивність */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -256,6 +258,37 @@ button[type="submit"]:hover {
 
     .contact-info {
         padding: 15px;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
+    .button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form label {
+        font-size: 1rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    /* Усуваємо перекриття елементів */
+    body {
+        overflow-x: hidden;
     }
 }
 
@@ -391,18 +424,4 @@ footer p {
 
 .button:hover {
     background-color: #d6272d;
-}
-
-@media (max-width: 768px) {
-    .contact-form {
-        padding: 15px;
-    }
-
-    .contact-form label {
-        font-size: 1rem;
-    }
-
-    .contact-form input, .contact-form textarea {
-        font-size: 1rem;
-    }
 }
