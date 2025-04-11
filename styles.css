@@ -82,7 +82,7 @@ section p {
     color: #666;
     margin-bottom: 30px;
     line-height: 1.8;
-    text-align: justify;  /* Додано для вирівнювання тексту */
+    text-align: justify;
 }
 
 .contact-info {
@@ -194,6 +194,38 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #d6272d;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result {
+    font-size: 18px;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 768px) {
@@ -353,8 +385,7 @@ footer p {
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -362,111 +393,16 @@ footer p {
     background-color: #d6272d;
 }
 
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.6rem;
-        padding: 0 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    nav ul li {
-        margin: 0;
-    }
-
-    nav ul li a {
-        font-size: 1rem;
-        padding: 10px 12px;
-    }
-
-    section {
-        padding: 20px 15px;
-        margin: 20px 10px;
-    }
-
-    section h2 {
-        font-size: 1.4rem;
-    }
-
-    section p {
-        font-size: 1rem;
-    }
-
-    .contact-info,
+@media (max-width: 768px) {
     .contact-form {
         padding: 15px;
-        margin: 20px 10px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 0.95rem;
-        padding: 10px;
-    }
-
-    button[type="submit"],
-    .contact-form button {
+    .contact-form label {
         font-size: 1rem;
-        padding: 10px;
     }
 
-    ul.internal-links {
-        grid-template-columns: 1fr;
-    }
-
-    h3 {
-        font-size: 1.4rem;
-    }
-
-    footer p {
-        font-size: 0.9rem;
-        padding: 0 10px;
-        text-align: center;
+    .contact-form input, .contact-form textarea {
+        font-size: 1rem;
     }
 }
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.burger-menu span {
-    height: 3px;
-    width: 25px;
-    background: white;
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-    .burger-menu {
-        display: flex;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #333;
-        width: 100%;
-        padding: 20px 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 999;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-}
-
