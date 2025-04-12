@@ -19,7 +19,7 @@ header {
     color: #fff;
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between; /* Розміщуємо заголовок та кнопку по краях */
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
@@ -38,7 +38,7 @@ header h1 a {
 
 /* Стилі для кнопки бургер-меню */
 .burger-button {
-    display: none; /* Приховано на великих екранах */
+    display: none;
     background: none;
     border: none;
     padding: 10px;
@@ -64,19 +64,19 @@ header h1 a {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Початкове положення за межами екрана */
+    left: -250px;
     width: 250px;
     height: 100%;
     background-color: #333;
     color: #fff;
     z-index: 1010;
     transition: left 0.3s ease-in-out;
-    padding-top: 60px; /* Щоб не перекривалося header */
-    overflow-y: auto; /* Додаємо скрол, якщо вміст занадто великий */
+    padding-top: 60px;
+    overflow-y: auto;
 }
 
 .sidebar.open {
-    left: 0; /* Відкрите положення */
+    left: 0;
 }
 
 .sidebar nav ul {
@@ -107,32 +107,32 @@ header h1 a {
 
 /* Стилі для основного контенту */
 .content {
-    padding-top: 60px; /* Щоб не перекривалося header */
-    transition: margin-left 0.3s ease-in-out; /* Для зсуву контенту при відкритті меню */
+    padding-top: 60px;
+    transition: margin-left 0.3s ease-in-out;
 }
 
 .content.sidebar-open {
-    margin-left: 250px; /* Зсув контенту на ширину бічного меню */
+    margin-left: 250px;
 }
 
 section {
     max-width: 800px;
-    margin: 20px auto; /* Зменшено верхній/нижній відступ */
-    padding: 20px; /* Зменшено внутрішній відступ */
+    margin: 20px auto;
+    padding: 20px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-    font-size: 1.8rem; /* Зменшено розмір шрифту */
-    margin-bottom: 20px; /* Зменшено відступ */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 section p {
-    font-size: 1rem; /* Зменшено розмір шрифту */
-    margin-bottom: 20px; /* Зменшено відступ */
+    font-size: 1rem;
+    margin-bottom: 20px;
     line-height: 1.6;
     text-align: justify;
 }
@@ -140,268 +140,13 @@ section p {
 footer {
     background-color: #333;
     color: #fff;
-    padding: 15px 20px; /* Зменшено відступи */
-    text-align: center;
-    margin-top: 20px; /* Зменшено відступ */
-    font-size: 0.9rem; /* Зменшено розмір шрифту */
-}
-
-/* Стилі для інших елементів (залиште ваші попередні стилі для них) */
-.contact-info {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.contact-info h3, .contact-info h4 {
-    text-align: center;
-}
-
-.contact-info h3 {
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
-}
-
-.contact-info a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-info ul li {
-    margin-bottom: 5px;
-}
-
-.question {
-    margin-bottom: 30px;
-}
-
-.question p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.answer {
-    display: block;
     padding: 15px 20px;
-    margin-bottom: 10px;
-    border: 2px solid #ccc;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    transition: background-color 0.3s ease;
-}
-
-.answer:hover {
-    background-color: #e0e0e0;
-}
-
-.answer.selected {
-    background-color: #c0c0c0;
-    color: #333;
-    border-color: #808080;
-}
-
-.answer.correct {
-    background-color: #c2e0c6;
-    border-color: #689f38;
-}
-
-.answer.incorrect {
-    background-color: #f8d7da;
-    border-color: #d32f2f;
-}
-
-.correct-answer {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #689f38;
-}
-
-button[type="submit"] {
-    background-color: #e63946;
-    color: white;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 20px auto;
-}
-
-button[type="submit"]:hover {
-    background-color: #d6272d;
-}
-
-#timer {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ff0000;
     text-align: center;
     margin-top: 20px;
+    font-size: 0.9rem;
 }
 
-.result {
-    font-size: 18px;
-    color: #333;
-    background-color: #f0f0f0;
-    padding: 15px;
-    margin-top: 20px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-ul.internal-links {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-ul.internal-links li {
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #f0f8ff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-ul.internal-links li:hover {
-    background-color: #007bff;
-    transform: translateY(-5px);
-}
-
-ul.internal-links li a {
-    display: block;
-    color: #007bff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-ul.internal-links li:hover a {
-    color: white;
-}
-
-h3 {
-    font-size: 2rem;
-    margin-top: 40px;
-    color: #333;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.contact-form {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 30px auto;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    max-width: 100%; /* Забезпечує адаптивність по ширині */
-}
-
-.contact-form button {
-    background-color: #e63946;
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.contact-form button:hover {
-    background-color: #d6272d;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    margin-top: 40px;
-    border-top: 2px solid #666;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Додано для адаптивності контенту футера */
-}
-
-footer p {
-    margin: 5px; /* Додано невеликий відступ між елементами футера */
-    font-size: 1rem;
-    color: white;
-}
-
+/* Стилі для інших елементів */
 .button {
     display: inline-block;
     background-color: #e63946;
@@ -412,8 +157,8 @@ footer p {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-decoration: none; /* Щоб уникнути підкреслення, якщо використовується як посилання */
-    margin-top: 10px; /* Додано невеликий відступ зверху */
+    text-decoration: none;
+    margin-top: 10px;
 }
 
 .button:hover {
@@ -422,7 +167,6 @@ footer p {
 
 /* Адаптивні стилі */
 @media (max-width: 1024px) {
-    /* Для екранів планшетів та менших десктопів */
     header h1 {
         font-size: 2.2rem;
     }
@@ -433,31 +177,28 @@ footer p {
 
     section h2 {
         font-size: 2rem;
-        margin-bottom: 25px;
     }
 
     section p {
         font-size: 1rem;
-        margin-bottom: 25px;
     }
 }
 
 @media (max-width: 768px) {
-    /* Для мобільних пристроїв */
     header h1 {
         font-size: 1.6rem;
     }
 
     nav ul {
-        display: none; /* Приховуємо основну навігацію */
+        display: none;
     }
 
     .burger-button {
-        display: block; /* Відображаємо кнопку бургер-меню */
+        display: block;
     }
 
     .content {
-        padding-top: 50px; /* Коригуємо відступ для контенту */
+        padding-top: 50px;
     }
 
     section {
@@ -467,12 +208,10 @@ footer p {
 
     section h2 {
         font-size: 1.4rem;
-        margin-bottom: 15px;
     }
 
     section p {
         font-size: 0.9rem;
-        margin-bottom: 15px;
     }
 
     footer {
@@ -483,50 +222,83 @@ footer p {
     .button {
         font-size: 0.9rem;
         padding: 10px 15px;
-        margin-top: 10px;
-    }
-
-    ul.internal-links {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 10px;
-        margin: 20px 0;
-    }
-
-    ul.internal-links li a {
-        font-size: 0.9rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-        margin-top: 25px;
-    }
-
-    p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin-bottom: 10px;
-    }
-
-    .contact-form {
-        padding: 15px;
-        margin: 15px auto;
-    }
-
-    .contact-form label {
-        font-size: 0.9rem;
-    }
-
-    .contact-form input, .contact-form textarea {
-        font-size: 0.9rem;
-        padding: 8px;
-        margin-bottom: 12px;
-    }
-
-    .contact-form button {
-        font-size: 0.9rem;
-        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Для дуже маленьких мобільних при
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+}
+@media (max-width: 480px) {
+    /* Для дуже маленьких мобільних пристроїв */
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    section p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 0.7rem;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    ul.internal-links {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin: 10px 0;
+    }
+
+    ul.internal-links li a {
+        font-size: 0.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .contact-form {
+        padding: 12px;
+        margin: 12px auto;
+    }
+
+    .contact-form label {
+        font-size: 0.8rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 0.8rem;
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+
+    .contact-form button {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
