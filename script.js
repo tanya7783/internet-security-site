@@ -92,4 +92,14 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Будь ласка, заповніть всі поля.');
         }
     });
+
+    // Отримуємо елементи меню та кнопку бургер-меню 
+    const burgerButton = document.querySelector('.burger-button');
+    const sidebarMenu = document.querySelector('nav ul');
+
+    // Додаємо обробник подій на клік по кнопці бургер-меню
+    burgerButton.addEventListener('click', () => {
+        // Перемикаємо клас для відкриття/закриття меню
+        sidebarMenu.classList.toggle('active');
+    });
 });
