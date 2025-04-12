@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     // Код для сторінки тестів (якщо є)
     const answerElements = document.querySelectorAll('.answer');
     if (answerElements.length > 0) {
@@ -53,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     resultDiv.classList.add('fade-in');
                 }, 100);
-
-               
-    
+            });
+        }
+    }
 
     // Код для сторінки контактів (якщо є)
     const contactForm = document.getElementById('contactForm');
@@ -104,4 +105,42 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Додаткові функції для адаптивного сайту (якщо є)
+    const sidebarToggle = document.querySelector('.burger-button');
+    const contentArea = document.querySelector('.content');
+
+    if (sidebarToggle && contentArea) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            contentArea.classList.toggle('sidebar-open');
+        });
+    }
+
+    // Таймер для тесту
+    let timer;
+    let timeLeft = 30 * 60; // Таймер на 30 хвилин
+
+    function startTimer() {
+        timer = setInterval(function() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            // Форматуємо таймер
+            document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                alert('Час вичерпано!');
+            } else {
+                timeLeft--;
+            }
+        }, 1000);
+    }
+
+    // Запуск таймера при завантаженні сторінки
+    window.onload = function() {
+        startTimer();
+    };
+
 });
