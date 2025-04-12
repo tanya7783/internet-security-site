@@ -111,3 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuButton.classList.toggle('active'); // Перемикає клас "active" для бургер-меню
     });
 });
+
+<script>
+    const burgerButton = document.querySelector('.burger-button');
+    const nav = document.querySelector('nav#mainNav');
+
+    burgerButton.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        burgerButton.classList.toggle('active');
+    });
+</script>
