@@ -54,30 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     resultDiv.classList.add('fade-in');
                 }, 100);
 
-                startTimer(5 * 60);
-            });
-
-            let timerInterval;
-
-            function startTimer(duration) {
-                let timer = duration, minutes, seconds;
-                timerInterval = setInterval(function() {
-                    minutes = Math.floor(timer / 60);
-                    seconds = timer % 60;
-
-                    const timerElement = document.getElementById('timer');
-                    if (timerElement) {
-                        timerElement.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-                    }
-
-                    if (--timer < 0) {
-                        clearInterval(timerInterval);
-                        alert("Час вийшов!");
-                    }
-                }, 1000);
-            }
-        }
-    }
+               
+    
 
     // Код для сторінки контактів (якщо є)
     const contactForm = document.getElementById('contactForm');
