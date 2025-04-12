@@ -1,4 +1,4 @@
-/* Загальні стилі */
+/* Загальні стилі для всієї сторінки */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     font-size: 16px;
 }
 
-/* Стилі header */
+/* Стилі для хедера */
 header {
     background-color: #333;
     color: #fff;
@@ -33,7 +33,7 @@ header h1 {
 
 header h1 a {
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* Видалити підкреслення */
     transition: color 0.3s ease;
 }
 
@@ -74,11 +74,11 @@ header h1 a:hover {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Стилі навігації */
+/* Стилі для навігаційного меню */
 nav#mainNav {
-    display: none;
+    display: none; /* Приховати навігацію на малих екранах */
     position: absolute;
-    top: 60px;
+    top: 60px; /* Регулюйте відповідно до висоти header */
     left: 0;
     width: 100%;
     background-color: #333;
@@ -114,12 +114,13 @@ nav#mainNav ul li a:hover {
     background-color: #e63946;
 }
 
-/* Стилі основного контенту */
+/* Стилі для основного контенту */
 main {
     padding: 20px;
-    margin-top: 60px;
+    margin-top: 60px; /* Відступ від фіксованого header */
 }
 
+/* Стилі для секцій */
 section {
     max-width: 800px;
     margin: 20px auto;
@@ -162,7 +163,7 @@ section p {
     background-color: #0056b3;
 }
 
-/* Стилі для footer */
+/* Стилі для футера */
 footer {
     background-color: #333;
     color: #fff;
@@ -172,7 +173,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Стилі для hero section */
+/* Стилі для головної сторінки (hero section) */
 .hero {
     text-align: center;
     padding: 60px 20px;
@@ -194,7 +195,7 @@ footer {
     margin-bottom: 30px;
 }
 
-/* Стилі для features */
+/* Стилі для блоку з основними розділами */
 .features {
     padding: 30px 20px;
     background-color: #f8f9fa;
@@ -244,7 +245,7 @@ ul.internal-links li:hover a {
     color: #0056b3;
 }
 
-/* Стилі для тестів */
+/* Стилі для сторінки з тестами */
 .question {
     margin-bottom: 30px;
 }
