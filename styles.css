@@ -214,3 +214,63 @@ footer {
     text-align: center;
     margin-top: 40px;
 }
+
+
+/* Бургер-меню */
+.burger-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.burger-button span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Стилі для відкритого меню */
+nav ul.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ховаємо меню на мобільних */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .burger-button {
+        display: flex;
+    }
+}
