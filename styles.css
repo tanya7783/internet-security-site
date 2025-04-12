@@ -1,3 +1,4 @@
+/* Загальні стилі */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@ body {
     font-size: 16px;
 }
 
+/* Стилі header */
 header {
     background-color: #333;
     color: #fff;
@@ -39,6 +41,7 @@ header h1 a:hover {
     color: #ffcccc;
 }
 
+/* Стилі для бургер-меню */
 .burger-button {
     display: flex;
     flex-direction: column;
@@ -71,10 +74,11 @@ header h1 a:hover {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Стилі навігації */
 nav#mainNav {
-    display: none; /* Приховати навігацію на малих екранах */
+    display: none;
     position: absolute;
-    top: 60px; /* Регулюйте відповідно до висоти header */
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #333;
@@ -110,9 +114,10 @@ nav#mainNav ul li a:hover {
     background-color: #e63946;
 }
 
+/* Стилі основного контенту */
 main {
     padding: 20px;
-    margin-top: 60px; /* Відступ від фіксованого header */
+    margin-top: 60px;
 }
 
 section {
@@ -139,6 +144,7 @@ section p {
     text-align: justify;
 }
 
+/* Стилі для кнопок */
 .button {
     display: inline-block;
     background-color: #007bff;
@@ -156,6 +162,7 @@ section p {
     background-color: #0056b3;
 }
 
+/* Стилі для footer */
 footer {
     background-color: #333;
     color: #fff;
@@ -165,7 +172,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Стилі для головної сторінки (hero section) */
+/* Стилі для hero section */
 .hero {
     text-align: center;
     padding: 60px 20px;
@@ -187,7 +194,7 @@ footer {
     margin-bottom: 30px;
 }
 
-/* Стилі для блоку з основними розділами */
+/* Стилі для features */
 .features {
     padding: 30px 20px;
     background-color: #f8f9fa;
@@ -237,7 +244,7 @@ ul.internal-links li:hover a {
     color: #0056b3;
 }
 
-/* Стилі для сторінки з тестами */
+/* Стилі для тестів */
 .question {
     margin-bottom: 30px;
 }
