@@ -102,10 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Перемикаємо клас для відкриття/закриття меню
         sidebarMenu.classList.toggle('active');
     });
-});
-document.getElementById('mobile-menu').addEventListener('click', function() {
-    const nav = document.getElementById('mainNav');
-    nav.classList.toggle('active'); // Перемикає клас "active" для меню
-    this.classList.toggle('active'); // Перемикає клас "active" для бургер-меню
-});
 
+    // Обробка бургер-меню для мобільної версії
+    const mobileMenuButton = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', function() {
+        const nav = document.getElementById('mainNav');
+        nav.classList.toggle('active'); // Перемикає клас "active" для меню
+        mobileMenuButton.classList.toggle('active'); // Перемикає клас "active" для бургер-меню
+    });
+});
