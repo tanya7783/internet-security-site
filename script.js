@@ -103,3 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarMenu.classList.toggle('active');
     });
 });
+document.getElementById('mobile-menu').addEventListener('click', function() {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('active'); // Перемикає клас "active" для меню
+    this.classList.toggle('active'); // Перемикає клас "active" для бургер-меню
+});
+
