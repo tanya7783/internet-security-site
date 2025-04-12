@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Обробка вибору відповіді
     document.querySelectorAll('.answer').forEach(answer => {
         answer.addEventListener('click', function() {
             const answers = this.closest('.question').querySelectorAll('.answer');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Обробка відправки форми
     document.getElementById('testForm').addEventListener('submit', function(event) {
         event.preventDefault();
         let score = 0;
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const answers = question.querySelectorAll('.answer');
             const correctAnswerText = question.querySelector('.correct-answer');
 
+            // Очищення старих класів
             answers.forEach(answer => {
                 answer.classList.remove('correct', 'incorrect');
             });
@@ -31,12 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 correctAnswerText.style.display = 'block';
             }
 
+            // Відображення правильних відповідей
             answers.forEach(answer => {
                 if (answer.getAttribute('data-correct') === 'true') {
                     answer.classList.add('correct');
                 }
             });
         });
+
+        // Виведення результату
         const resultDiv = document.createElement('div');
         resultDiv.classList.add('result');
         resultDiv.innerHTML = `Ваш результат: ${score} з ${document.querySelectorAll('.question').length}`;
@@ -45,10 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
             resultDiv.classList.add('fade-in');
         }, 100);
 
-        startTimer(5 * 60); 
+        startTimer(5 * 60);  // Запуск таймера на 5 хвилин
     });
 
     let timerInterval;
+    // Функція для запуску таймера
     function startTimer(duration) {
         let timer = duration, minutes, seconds;
         timerInterval = setInterval(function () {
@@ -64,21 +71,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 
+    // Функція для відправки email
     function sendEmail() {
         window.location.href = "mailto:tania.hrynda@gmail.com";
     }
 
+    // Обробка форми контактів
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();  
+        event.preventDefault();
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
-        
+
         if (name && email && message) {
             const successMessage = document.getElementById('successMessage');
             successMessage.textContent = 'Ваше повідомлення успішно надіслано!';
             successMessage.style.display = 'block';
-            document.getElementById('contactForm').reset();  
+            document.getElementById('contactForm').reset();
         } else {
             alert('Будь ласка, заповніть всі поля.');
         }
