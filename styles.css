@@ -1,3 +1,4 @@
+/* Загальні стилі */
 * {
     margin: 0;
     padding: 0;
@@ -229,69 +230,6 @@ button[type="submit"]:hover {
     }
 }
 
-/* Адаптивність */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-    section h2, section h3 {
-        font-size: 1.6rem;
-    }
-
-    section p, section ul li {
-        font-size: 1rem;
-    }
-
-    .contact-info {
-        padding: 15px;
-    }
-
-    footer {
-        padding: 10px 0;
-    }
-
-    .button {
-        padding: 12px 20px;
-        font-size: 1rem;
-    }
-
-    .contact-form {
-        padding: 15px;
-    }
-
-    .contact-form label {
-        font-size: 1rem;
-    }
-
-    .contact-form input, .contact-form textarea {
-        font-size: 1rem;
-    }
-
-    .contact-form button {
-        padding: 14px;
-        font-size: 1rem;
-    }
-
-    /* Усуваємо перекриття елементів */
-    body {
-        overflow-x: hidden;
-    }
-}
-
 ul.internal-links {
     list-style: none;
     padding: 0;
@@ -374,6 +312,7 @@ p {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    max-width: 100%; /* Забезпечує адаптивність по ширині */
 }
 
 .contact-form button {
@@ -402,10 +341,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Додано для адаптивності контенту футера */
 }
 
 footer p {
-    margin: 0;
+    margin: 5px; /* Додано невеликий відступ між елементами футера */
     font-size: 1rem;
     color: white;
 }
@@ -420,8 +360,196 @@ footer p {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none; /* Щоб уникнути підкреслення, якщо використовується як посилання */
+    margin-top: 10px; /* Додано невеликий відступ зверху */
 }
 
 .button:hover {
     background-color: #d6272d;
+}
+
+/* Адаптивні стилі */
+@media (max-width: 1024px) {
+    /* Для екранів планшетів та менших десктопів */
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    section p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Для мобільних пристроїв */
+    header {
+        padding: 15px 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 8px 16px;
+        display: block; /* Щоб посилання займали всю ширину li */
+        text-align: center;
+    }
+
+    section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    section p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 10px;
+        flex-direction: column; /* Розташовуємо елементи футера вертикально */
+        align-items: center;
+    }
+
+    footer p {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 10px 15px;
+        margin-top: 10px;
+        text-align: center;
+        display: block; /* Розтягуємо кнопку на всю ширину контейнера */
+    }
+
+    ul.internal-links {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    ul.internal-links li a {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin-top: 30px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .contact-form {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .contact-form label {
+        font-size: 1rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 1rem;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Для дуже маленьких мобільних пристроїв */
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    section p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    ul.internal-links {
+        grid-template-columns: 1fr; /* Розташовуємо посилання в один стовпець */
+        gap: 8px;
+    }
+
+    ul.internal-links li a {
+        font-size: 0.9rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+        margin-top: 25px;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
 }
