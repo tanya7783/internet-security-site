@@ -78,13 +78,6 @@ header h1 a {
     left: 0;
 }
 
-#burgerButton {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 1001; /* Бургер-меню має бути поверх меню */
-}
 .sidebar nav ul {
     list-style: none;
     padding: 0;
@@ -152,7 +145,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Стилі для інших елементів */
+/* Стилі для кнопок */
 .button {
     display: inline-block;
     background-color: #e63946;
@@ -171,6 +164,42 @@ footer {
     background-color: #d6272d;
 }
 
+/* Стилі для вкладок */
+.tab-container {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #f0f0f0;
+}
+
+.tab.active {
+    background-color: #f0f0f0;
+    border-color: #e63946;
+}
+
+/* Стилі для вмісту вкладок */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
 /* Адаптивні стилі */
 @media (max-width: 1024px) {
     header h1 {
@@ -187,6 +216,11 @@ footer {
 
     section p {
         font-size: 1rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 10px 15px;
     }
 }
 
@@ -240,71 +274,13 @@ footer {
         font-size: 0.8rem;
         padding: 8px 12px;
     }
-}
-@media (max-width: 480px) {
-    /* Для дуже маленьких мобільних пристроїв */
-    header h1 {
-        font-size: 1.4rem;
+
+    .tab-container {
+        flex-direction: column;
     }
 
-    section h2 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-
-    section p {
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-    }
-
-    footer {
-        padding: 8px;
-        font-size: 0.7rem;
-    }
-
-    .button {
-        font-size: 0.8rem;
-        padding: 8px 12px;
-    }
-
-    ul.internal-links {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        margin: 10px 0;
-    }
-
-    ul.internal-links li a {
-        font-size: 0.8rem;
-    }
-
-    h3 {
-        font-size: 1.4rem;
-        margin-top: 20px;
-    }
-
-    p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-bottom: 8px;
-    }
-
-    .contact-form {
-        padding: 12px;
-        margin: 12px auto;
-    }
-
-    .contact-form label {
-        font-size: 0.8rem;
-    }
-
-    .contact-form input, .contact-form textarea {
-        font-size: 0.8rem;
-        padding: 6px;
-        margin-bottom: 10px;
-    }
-
-    .contact-form button {
-        font-size: 0.8rem;
-        padding: 8px;
+    .tab {
+        width: 100%;
+        text-align: center;
     }
 }
