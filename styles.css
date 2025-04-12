@@ -15,16 +15,18 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin: 0;
 }
 
 header h1 a {
@@ -38,239 +40,202 @@ header h1 a:hover {
 }
 
 .burger-button {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.burger-button .burger-icon {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    padding: 5px;
 }
 
 .burger-button .burger-icon span {
+    display: block;
     width: 30px;
     height: 3px;
     background-color: white;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.sidebar {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+.burger-button.active .burger-icon span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-nav ul {
+.burger-button.active .burger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-button.active .burger-icon span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+nav#mainNav {
+    display: none; /* Приховати навігацію на малих екранах */
+    position: absolute;
+    top: 60px; /* Регулюйте відповідно до висоти header */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 999;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav#mainNav.active {
+    display: block;
+}
+
+nav#mainNav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    padding: 0;
+    margin: 0;
 }
 
-nav ul li {
-    margin: 0 15px;
+nav#mainNav ul li {
+    padding: 10px 0;
 }
 
-nav ul li a {
+nav#mainNav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
-    padding: 8px 16px;
     transition: background-color 0.3s ease;
-    border-radius: 5px;
+    display: block;
+    padding: 10px 20px;
 }
 
-nav ul li a:hover {
+nav#mainNav ul li a:hover {
     background-color: #e63946;
+}
+
+main {
+    padding: 20px;
+    margin-top: 60px; /* Відступ від фіксованого header */
 }
 
 section {
     max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
+    margin: 20px auto;
+    padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 section p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #666;
-    margin-bottom: 30px;
-    line-height: 1.8;
+    margin-bottom: 20px;
+    line-height: 1.6;
     text-align: justify;
 }
 
-button[type="submit"] {
-    background-color: #e63946;
+.button {
+    display: inline-block;
+    background-color: #007bff;
     color: white;
-    font-size: 1.1rem;
-    padding: 12px 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 20px auto;
-}
-
-button[type="submit"]:hover {
-    background-color: #d6272d;
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-    section h2, section h3 {
-        font-size: 1.6rem;
-    }
-
-    section p, section ul li {
-        font-size: 1rem;
-    }
-
-    .contact-info {
-        padding: 15px;
-    }
-
-    .sidebar {
-        display: none;
-    }
-
-    .burger-button {
-        display: block;
-    }
-}
-
-ul.internal-links {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-ul.internal-links li {
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #f0f8ff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-ul.internal-links li:hover {
-    background-color: #007bff;
-    transform: translateY(-5px);
-}
-
-ul.internal-links li a {
-    display: block;
-    color: #007bff;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-ul.internal-links li:hover a {
-    color: white;
+.button:hover {
+    background-color: #0056b3;
 }
 
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 15px 20px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
+    font-size: 0.9rem;
 }
 
+/* Стилі для десктопної версії */
+@media (min-width: 769px) {
+    header {
+        padding: 20px 30px;
+    }
 
-/* Бургер-меню */
-.burger-button {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 25px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.burger-button span {
-    display: block;
-    width: 30px;
-    height: 4px;
-    background-color: #333;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-/* Стилі для відкритого меню */
-nav ul.active {
-    display: block;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    padding: 10px;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Ховаємо меню на мобільних */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
+    header h1 {
+        font-size: 2.5rem;
     }
 
     .burger-button {
+        display: none;
+    }
+
+    nav#mainNav {
         display: flex;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        justify-content: flex-end;
+    }
+
+    nav#mainNav ul {
+        display: flex;
+    }
+
+    nav#mainNav ul li {
+        margin: 0 15px;
+        padding: 0;
+    }
+
+    nav#mainNav ul li a {
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    nav#mainNav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    main {
+        padding: 40px;
+        margin-top: 0;
+    }
+
+    section {
+        padding: 40px;
+        margin: 40px auto;
+    }
+
+    section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    section p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        line-height: 1.8;
+    }
+
+    .button {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+
+    footer {
+        padding: 20px;
+        font-size: 1rem;
     }
 }
