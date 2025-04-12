@@ -139,42 +139,21 @@ section p {
     text-align: justify;
 }
 
-.contact-info {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.contact-info h3, .contact-info h4 {
-    text-align: center;
-}
-
-.contact-info h3 {
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
-}
-
-.contact-info a {
-    color: #007bff;
+    cursor: pointer;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-info ul li {
-    margin-bottom: 5px;
+.button:hover {
+    background-color: #0056b3;
 }
 
 footer {
@@ -184,220 +163,6 @@ footer {
     text-align: center;
     margin-top: 30px;
     font-size: 0.9rem;
-}
-
-.question {
-    margin-bottom: 30px;
-}
-
-.question p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.answer {
-    display: block;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    border: 2px solid #ccc;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    transition: background-color 0.3s ease;
-}
-
-.answer:hover {
-    background-color: #e0e0e0;
-}
-
-.answer.selected {
-    background-color: #c0c0c0;
-    color: #333;
-    border-color: #808080;
-}
-
-.answer.correct {
-    background-color: #c2e0c6;
-    border-color: #689f38;
-}
-
-.answer.incorrect {
-    background-color: #f8d7da;
-    border-color: #d32f2f;
-}
-
-.correct-answer {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #689f38;
-}
-
-button[type="submit"] {
-    background-color: #e63946;
-    color: white;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 20px auto;
-}
-
-button[type="submit"]:hover {
-    background-color: #d6272d;
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-    section h2, section h3 {
-        font-size: 1.6rem;
-    }
-
-    section p, section ul li {
-        font-size: 1rem;
-    }
-
-    .contact-info {
-        padding: 15px;
-    }
-}
-
-ul.internal-links {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-ul.internal-links li {
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #f0f8ff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-ul.internal-links li:hover {
-    background-color: #007bff;
-    transform: translateY(-5px);
-}
-
-ul.internal-links li a {
-    display: block;
-    color: #007bff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-ul.internal-links li:hover a {
-    color: white;
-}
-
-h3 {
-    font-size: 2rem;
-    margin-top: 40px;
-    color: #333;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.contact-form {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 30px auto;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    background-color: #e63946;
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.contact-form button:hover {
-    background-color: #d6272d;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    margin-top: 40px;
-    border-top: 2px solid #666;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: white;
 }
 
 /* Стилі для головної сторінки (hero section) */
@@ -470,6 +235,72 @@ ul.internal-links li a {
 
 ul.internal-links li:hover a {
     color: #0056b3;
+}
+
+/* Стилі для сторінки з тестами */
+.question {
+    margin-bottom: 30px;
+}
+
+.question p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.answer {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+}
+
+.answer:hover {
+    background-color: #e0e0e0;
+}
+
+.answer.selected {
+    background-color: #c0c0c0;
+    color: #333;
+    border-color: #808080;
+}
+
+.answer.correct {
+    background-color: #c2e0c6;
+    border-color: #689f38;
+}
+
+.answer.incorrect {
+    background-color: #f8d7da;
+    border-color: #d32f2f;
+}
+
+.correct-answer {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #689f38;
+}
+
+#testForm button[type="submit"] {
+    background-color: #e63946;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+#testForm button[type="submit"]:hover {
+    background-color: #d6272d;
 }
 
 /* Стилі для десктопної версії */
@@ -563,4 +394,33 @@ ul.internal-links li:hover a {
     }
 
     .features h3 {
-        font-size: 2.
+        font-size: 2.5rem;
+    }
+
+    ul.internal-links {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    ul.internal-links li {
+        padding: 20px;
+    }
+
+    ul.internal-links li a {
+        font-size: 1.2rem;
+    }
+
+    .question p {
+        font-size: 1.4rem;
+    }
+
+    .answer {
+        padding: 18px 25px;
+        font-size: 1.1rem;
+    }
+
+    #testForm button[type="submit"] {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+}
