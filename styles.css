@@ -165,6 +165,78 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Стилі для головної сторінки (hero section) */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Стилі для блоку з основними розділами */
+.features {
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.features h3 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+ul.internal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+ul.internal-links li {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul.internal-links li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+ul.internal-links li a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+ul.internal-links li:hover a {
+    color: #0056b3;
+}
+
 /* Стилі для десктопної версії */
 @media (min-width: 769px) {
     header {
@@ -237,5 +309,38 @@ footer {
     footer {
         padding: 20px;
         font-size: 1rem;
+    }
+
+    .hero {
+        padding: 80px 40px;
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+    }
+
+    .features {
+        padding: 40px;
+    }
+
+    .features h3 {
+        font-size: 2.5rem;
+    }
+
+    ul.internal-links {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    ul.internal-links li {
+        padding: 20px;
+    }
+
+    ul.internal-links li a {
+        font-size: 1.2rem;
     }
 }
