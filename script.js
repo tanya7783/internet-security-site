@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Перевірка наявності елемента бургер-меню
+    const burgerButton = document.querySelector('.burger-button');
+    const nav = document.querySelector('nav#mainNav');
+
+    if (burgerButton && nav) {
+        // Додаємо обробник події для бургер-меню
+        burgerButton.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burgerButton.classList.toggle('active');
+        });
+    } else {
+        console.log("Елементи не знайдені: .burger-button або #mainNav.");
+    }
+
     // Обробка вибору відповіді
     document.querySelectorAll('.answer').forEach(answer => {
         answer.addEventListener('click', function() {
@@ -30,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     selectedAnswer.classList.add('incorrect');
                 }
             }
+
             if (correctAnswerText) {
                 correctAnswerText.style.display = 'block';
             }
@@ -93,21 +108,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Отримуємо елементи меню та кнопку бургер-меню 
-    const burgerButton = document.querySelector('.burger-button');
-    const sidebarMenu = document.querySelector('nav ul');
-
-    // Додаємо обробник подій на клік по кнопці бургер-меню
-    burgerButton.addEventListener('click', () => {
-        // Перемикаємо клас для відкриття/закриття меню
-        sidebarMenu.classList.toggle('active');
-    });
-
-    // Обробка бургер-меню для мобільної версії
+    // Обробка мобільного меню
     const mobileMenuButton = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', function() {
-        const nav = document.getElementById('mainNav');
-        nav.classList.toggle('active'); // Перемикає клас "active" для меню
-        mobileMenuButton.classList.toggle('active'); // Перемикає клас "active" для бургер-меню
-    });
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            mobileMenuButton.classList.toggle('active');
+        });
+    } else {
+        console.log("Елемент '#mobile-menu' не знайдений.");
+    }
 });
