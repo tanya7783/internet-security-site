@@ -333,9 +333,8 @@ ul.internal-links li:hover a {
         flex-direction: column;
         width: 100%;
         background-color: #333;
-        padding: 10px 0;
         position: absolute;
-        top: 100%;
+        top: 60px;
         left: 0;
     }
 
@@ -345,27 +344,32 @@ ul.internal-links li:hover a {
 
     .nav-links li {
         text-align: center;
-        margin: 10px 0;
+        width: 100%;
+        margin: 0;
     }
 
-    header h1 {
-        font-size: 2rem;
+    .nav-links li a {
+        padding: 15px;
+        width: 100%;
+        font-size: 1.5rem;
     }
 
-    section {
-        padding: 20px;
+    .burger-button.open span:nth-child(1) {
+        transform: rotate(-45deg);
+        margin-top: 8px;
     }
 
-    section h2 {
-        font-size: 1.6rem;
+    .burger-button.open span:nth-child(2) {
+        opacity: 0;
     }
 
-    section p {
-        font-size: 1rem;
+    .burger-button.open span:nth-child(3) {
+        transform: rotate(45deg);
+        margin-top: -8px;
     }
 
     .test-button {
         width: 100%;
-        font-size: 1rem;
+        text-align: center;
     }
 }
