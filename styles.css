@@ -25,7 +25,6 @@ header {
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: white; /* Білого кольору для заголовка */
 }
 
 header h1 a {
@@ -62,6 +61,11 @@ nav ul li a:hover {
     background-color: #e63946;
 }
 
+nav ul li a.active {
+    color: #7f5fff; /* фіолетовий колір для підсвічування */
+    text-decoration: underline;
+}
+
 section {
     max-width: 800px;
     margin: 40px auto;
@@ -83,7 +87,7 @@ section p {
     color: #666;
     margin-bottom: 30px;
     line-height: 1.8;
-    text-align: justify;  /* Вирівнювання тексту */
+    text-align: justify;
 }
 
 .contact-info {
@@ -197,7 +201,24 @@ button[type="submit"]:hover {
     background-color: #d6272d;
 }
 
-/* Адаптивні стилі для телефонів */
+/* Стиль для кнопки "Пройти тест" */
+button.test-button {
+    background-color: #7f5fff;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+button.test-button:hover {
+    background-color: #5a3fbb;
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -227,51 +248,13 @@ button[type="submit"]:hover {
     .contact-info {
         padding: 15px;
     }
-
-    .answer {
-        padding: 12px;
-    }
-
-    button[type="submit"] {
-        padding: 14px;
-    }
 }
 
-/* Адаптивні стилі для мобільних телефонів */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul li {
-        margin-bottom: 5px;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    section h2, section h3 {
-        font-size: 1.4rem;
-    }
-
-    section p, section ul li {
-        font-size: 1rem;
-    }
-
-    .contact-info {
-        padding: 10px;
-    }
-
-    .answer {
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    button[type="submit"] {
-        padding: 16px;
-        font-size: 1rem;
-    }
+/* Модифікація для меню на головній сторінці */
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 ul.internal-links {
