@@ -109,12 +109,20 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Елемент 'contactForm' не знайдений.");
     }
 
-    // === 5. Бургер-меню ===
+    // === 5. Бургер-меню для мобільних ===
     const burgerButton = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
-    burgerButton.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        burgerButton.classList.toggle('open');
-    });
+    // Перевірка на наявність елементів
+    if (burgerButton && navLinks) {
+        burgerButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burgerButton.classList.toggle('open');
+        });
+    }
+
+    // Перевірка на наявність бургер-меню, щоб не виникала помилка, якщо воно не знайдено
+    else {
+        console.log("Не знайдено елементів для бургер-меню.");
+    }
 });
