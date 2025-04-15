@@ -105,12 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const burgerButton = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
-    if (burgerButton && navLinks) {
-        burgerButton.addEventListener('click', function () {
-            navLinks.classList.toggle('active');
-            burgerButton.classList.toggle('active');
-        });
-    } else {
-        console.log("Бургер-меню або навігація не знайдені.");
-    }
+    burgerButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    burgerButton.classList.toggle('open');
 });
