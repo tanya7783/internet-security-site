@@ -1,3 +1,4 @@
+/* Загальні стилі */
 * {
     margin: 0;
     padding: 0;
@@ -12,45 +13,39 @@ body {
     font-size: 16px;
 }
 
+/* Хедер та навігація */
 header {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
-    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header h1 a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-header h1 a:hover {
-    color: #ffcccc;
-}
-
-nav ul {
-    list-style: none;
+nav {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 10px;
-    padding: 0 20px; /* Додано відступи для десктопної навігації */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-nav ul li a {
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
@@ -59,15 +54,16 @@ nav ul li a {
     border-radius: 5px;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     background-color: #e63946;
 }
 
-nav ul li a.active {
-    color: #7f5fff; /* фіолетовий колір для підсвічування */
-    text-decoration: underline;
+/* Активне посилання */
+.nav-links li a.active {
+    background-color: #555;
 }
 
+/* Секції */
 section {
     max-width: 800px;
     margin: 40px auto;
@@ -92,44 +88,25 @@ section p {
     text-align: justify;
 }
 
-.contact-info {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
+/* Кнопка "Пройти тести" */
+.test-button {
+    display: inline-block;
+    background-color: #e63946;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
     border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.contact-info h3, .contact-info h4 {
-    text-align: center;
-}
-
-.contact-info h3 {
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
-}
-
-.contact-info a {
-    color: #007bff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-    color: #0056b3;
+.test-button:hover {
+    background-color: #d6272d;
 }
 
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-info ul li {
-    margin-bottom: 5px;
-}
-
+/* Футер */
 footer {
     background-color: #333;
     color: #fff;
@@ -138,257 +115,84 @@ footer {
     margin-top: 40px;
 }
 
-.question {
-    margin-bottom: 30px;
-}
-
-.question p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.answer {
-    display: block;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    border: 2px solid #ccc;
+/* Бургер-меню */
+.burger-button {
+    display: none;
+    flex-direction: column;
     cursor: pointer;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    transition: background-color 0.3s ease;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
 }
 
-.answer:hover {
-    background-color: #e0e0e0;
-}
-
-.answer.selected {
-    background-color: #c0c0c0;
-    color: #333;
-    border-color: #808080;
-}
-
-.answer.correct {
-    background-color: #c2e0c6;
-    border-color: #689f38;
-}
-
-.answer.incorrect {
-    background-color: #f8d7da;
-    border-color: #d32f2f;
-}
-
-.correct-answer {
+.burger-button span {
+    height: 4px;
+    width: 100%;
+    background-color: white;
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #689f38;
+    border-radius: 2px;
 }
 
-button[type="submit"] {
-    background-color: #e63946;
-    color: white;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 20px auto;
-}
-
-button[type="submit"]:hover {
-    background-color: #d6272d;
-}
-
-/* Стиль для кнопки "Пройти тест" */
-button.test-button {
-    background-color: #7f5fff;
-    color: white;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 20px auto;
-}
-
-button.test-button:hover {
-    background-color: #5a3fbb;
-}
-
+/* Адаптивність */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
+    .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: flex-start; /* Вирівнювання по лівому краю */
+        background-color: #333;
         position: absolute;
-        top: 60px; /* Під header */
+        top: 60px;
         left: 0;
         width: 100%;
-        background-color: #333;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-        display: none; /* Приховано за замовчуванням */
-        padding: 0; /* Прибираємо відступи мобільної навігації */
+        padding: 0;
+        margin: 0;
+        z-index: 1000;
     }
 
-    nav ul.active {
+    .nav-links.show {
         display: flex;
     }
 
-    nav ul li {
+    .burger-button {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
         width: 100%;
-        padding: 10px 20px;
-        margin: 0;
-        border-bottom: 1px solid #555;
-        text-align: left; /* Вирівнювання тексту по лівому краю */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    nav ul li:last-child {
-        border-bottom: none;
+    .logo a {
+        font-size: 1.5rem;
     }
 
-    nav ul li a {
-        display: block;
-        padding: 10px 20px;
-        color: #fff;
-    }
-
-    nav ul li a:hover {
-        background-color: #555;
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #444;
+        padding: 15px 0;
     }
 
     section {
         padding: 20px;
     }
 
-    section h2, section h3 {
+    section h2 {
         font-size: 1.6rem;
     }
 
-    section p, section ul li {
+    section p {
         font-size: 1rem;
     }
 
-    .contact-info {
-        padding: 15px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: flex-start; /* Вирівнювання по лівому краю */
-        position: absolute;
-        top: 60px; /* Під header */
-        left: 0;
+    .test-button {
         width: 100%;
-        background-color: #333;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-        display: none; /* Приховано за замовчуванням */
+        text-align: center;
     }
-
-    header nav ul.active {
-        display: flex;
-    }
-
-    header nav ul li {
-        width: 100%;
-        padding: 10px 20px;
-        margin: 0;
-        border-bottom: 1px solid #555;
-        text-align: left; /* Вирівнювання тексту по лівому краю */
-    }
-
-    header nav ul li:last-child {
-        border-bottom: none;
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 10px 20px;
-        color: #fff;
-    }
-
-    header nav ul li a:hover {
-        background-color: #555;
-    }
-
-    header .logo {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Розміщення лого та бургер-кнопки */
-        padding: 0 20px;
-        width: 100%;
-    }
-
-    header .nav-links {
-        display: none; /* Приховуємо десктопні посилання */
-    }
-}
-
-/* Стилі для логотипу в header */
-header .logo a {
-    font-size: 1.5rem; /* Зменшено розмір логотипу на мобільних */
-}
-
-/* Стилі для бургер-меню (додано) */
-.burger-button {
-    display: none; /* Приховати на десктопних версіях */
-    width: 30px;
-    height: 25px;
-    position: relative;
-    cursor: pointer;
-    margin-left: auto; /* Розмістити справа */
-}
-
-.burger-button span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #fff; /* Змінено колір на білий, щоб краще видно на темному header */
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-}
-
-.burger-button span:nth-child(1) {
-    top: 0px;
-}
-
-.burger-button span:nth-child(2), .burger-button span:nth-child(3) {
-    top: 9px;
-}
-
-.burger-button span:nth-child(4) {
-    top: 18px;
-}
-
-.burger-button.open span:nth-child(1) {
-    top: 9px;
-    transform: rotate(45deg);
-}
-
-.burger-button.open span:nth-child(2) {
-    opacity: 0;
-    left: -60px;
-}
-
-.burger-button.open span:nth-child(3) {
-    opacity: 0;
-    left: -60px;
-}
-
-.burger-button.open span:nth-child(4) {
-    top: 9px;
-    transform: rotate(-45deg);
 }
