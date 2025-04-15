@@ -29,7 +29,7 @@ header h1 {
 
 header h1 a {
     color: white;
-    text-decoration: none; 
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
@@ -40,33 +40,50 @@ header h1 a:hover {
 nav {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; /* Для десктопу */
     align-items: center;
-    padding: 0 20px;
+    padding: 10px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.logo {
+.logo-container { /* Контейнер для лого та бургер-кнопки */
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%; /* На мобільних займає всю ширину */
+}
+
+.logo {
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
 }
 
 .burger-button {
-    display: none;
+    display: none; /* Приховано на десктопі */
     flex-direction: column;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 15px;
+}
+
+.burger-button.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-button.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-button.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .burger-button span {
     width: 25px;
     height: 3px;
     background-color: white;
-    margin: 3px 0;
+    margin: 5px 0;
     transition: all 0.3s ease;
 }
 
@@ -124,7 +141,7 @@ section p {
     padding: 12px 24px;
     font-size: 1.1rem;
     color: white;
-    background-color: #e63946; /* Червоний колір */
+    background-color: #e63946;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -132,7 +149,7 @@ section p {
 }
 
 .test-button:hover {
-    background-color: #d6272d; 
+    background-color: #d6272d;
 }
 
 .check-button {
@@ -140,7 +157,7 @@ section p {
     padding: 12px 24px;
     font-size: 1.1rem;
     color: white;
-    background-color: #e63946; 
+    background-color: #e63946;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -148,7 +165,7 @@ section p {
 }
 
 .check-button:hover {
-    background-color: #d6272d; 
+    background-color: #d6272d;
 }
 
 .contact-info {
@@ -314,7 +331,7 @@ ul.internal-links li:hover a {
 }
 
 .contact-form button {
-    background-color: #e63946; 
+    background-color: #e63946;
     color: white;
     padding: 14px;
     border: none;
@@ -330,6 +347,19 @@ ul.internal-links li:hover a {
 }
 
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
     .burger-button {
         display: flex;
     }
@@ -339,9 +369,7 @@ ul.internal-links li:hover a {
         flex-direction: column;
         width: 100%;
         background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
+        margin-top: 10px;
     }
 
     .nav-links.active {
@@ -349,16 +377,22 @@ ul.internal-links li:hover a {
     }
 
     .nav-links li {
-        text-align: center;
         width: 100%;
-        padding: 10px;
+        text-align: left;
+        padding: 10px 20px;
+        border-bottom: 1px solid #555;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
     }
 
     .nav-links li a {
-        padding: 12px;
+        display: block;
+        padding: 10px 20px;
     }
 
     .logo {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 }
