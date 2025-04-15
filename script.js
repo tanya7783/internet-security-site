@@ -47,21 +47,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         answer.classList.add('correct');
                     }
                 });
+
+                const resultDiv = document.createElement('div');
+                resultDiv.classList.add('result');
+                resultDiv.innerHTML = `Ваш результат: ${score} з ${document.querySelectorAll('.question').length}`;
+                document.querySelector('section').appendChild(resultDiv);
+                setTimeout(() => {
+                    resultDiv.classList.add('fade-in');
+                }, 100);
+
+                startTimer(5 * 60); // Таймер: 5 хв
             });
-
-            const resultDiv = document.createElement('div');
-            resultDiv.classList.add('result');
-            resultDiv.innerHTML = `Ваш результат: ${score} з ${document.querySelectorAll('.question').length}`;
-            document.querySelector('section').appendChild(resultDiv);
-            setTimeout(() => {
-                resultDiv.classList.add('fade-in');
-            }, 100);
-
-            startTimer(5 * 60); // Таймер: 5 хв
-        });
-    } else {
-        console.log("Елемент 'testForm' не знайдений.");
-    }
+        } else {
+            console.log("Елемент 'testForm' не знайдений.");
+        }
 
     // === 2. Таймер ===
     let timerInterval;
@@ -119,10 +118,14 @@ document.addEventListener('DOMContentLoaded', function () {
             navLinks.classList.toggle('active');
             burgerButton.classList.toggle('open');
         });
-    }
 
-    // Перевірка на наявність бургер-меню, щоб не виникала помилка, якщо воно не знайдено
-    else {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                navLinks.classList.remove('active');
+                burgerButton.classList.remove('open');
+            }
+        });
+    } else {
         console.log("Не знайдено елементів для бургер-меню.");
     }
 });
