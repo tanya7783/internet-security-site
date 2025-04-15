@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // 1. Обробка вибору відповіді
     document.querySelectorAll('.answer').forEach(answer => {
         answer.addEventListener('click', function () {
             const answers = this.closest('.question').querySelectorAll('.answer');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // 2. Обробка форми тесту
     const testForm = document.getElementById('testForm');
     if (testForm) {
         testForm.addEventListener('submit', function (event) {
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Елемент 'testForm' не знайдений.");
     }
 
-    // === 3. Таймер ===
+    // 3. Таймер
     let timerInterval;
     function startTimer(duration) {
         let timer = duration, minutes, seconds;
@@ -74,12 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    // === 4. Відправка email (не використовується зараз) ===
-    function sendEmail() {
-        window.location.href = "mailto:tania.hrynda@gmail.com";
-    }
-
-    // === 5. Обробка форми контактів ===
+    // 4. Обробка форми контактів
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (event) {
@@ -101,11 +98,52 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Елемент 'contactForm' не знайдений.");
     }
 
-    // === 6. Бургер-меню ===
+    // 5. Бургер-меню
     const burgerButton = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
     burgerButton.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    burgerButton.classList.toggle('open');
+        navLinks.classList.toggle('active');
+        burgerButton.classList.toggle('open');
+    });
+
+    // 6. Респонсивність: медіа-запит для адаптивного меню та інших елементів
+    function adjustLayoutForMobile() {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth <= 768) {
+            document.querySelectorAll('.test-button').forEach(button => {
+                button.style.width = '100%';  // Кнопки займають всю ширину на мобільних пристроях
+            });
+
+            document.querySelectorAll('section h2').forEach(h2 => {
+                h2.style.fontSize = '1.6rem';  // Зменшення шрифта для заголовків
+            });
+
+            document.querySelectorAll('section p').forEach(p => {
+                p.style.fontSize = '1rem';  // Зменшення шрифта для тексту
+            });
+
+            document.querySelector('.nav-links').style.display = 'none'; // Приховуємо меню за замовчуванням
+        } else {
+            // Для великих екранів
+            document.querySelectorAll('.test-button').forEach(button => {
+                button.style.width = 'auto';  // Відновлюємо стандартну ширину кнопок
+            });
+
+            document.querySelectorAll('section h2').forEach(h2 => {
+                h2.style.fontSize = '2rem';  // Відновлюємо стандартний шрифт для заголовків
+            });
+
+            document.querySelectorAll('section p').forEach(p => {
+                p.style.fontSize = '1.2rem';  // Відновлюємо стандартний шрифт для тексту
+            });
+
+            document.querySelector('.nav-links').style.display = 'flex';  // Відновлюємо видимість меню
+        }
+    }
+
+    // Перевіряємо респонсивність при зміні розміру вікна
+    window.addEventListener('resize', adjustLayoutForMobile);
+    adjustLayoutForMobile();  // Спочатку виконуємо функцію, щоб налаштувати елементи при завантаженні сторінки
 });
