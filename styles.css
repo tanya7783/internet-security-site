@@ -140,6 +140,7 @@ section p {
     text-align: justify;
 }
 
+/* Стилі для кнопки "пройти тести" (припускаємо, що такий клас існує) */
 .test-button {
     display: inline-block;
     padding: 12px 24px;
@@ -156,7 +157,26 @@ section p {
     background-color: #d6272d;
 }
 
-.check-button {
+/* Стилі для кнопки "Перевірити відповіді" */
+button[type="submit"] { /* Змінено селектор для кнопки "Перевірити відповіді" */
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #e63946;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border: none; /* Додано для видалення стандартної рамки кнопки */
+    cursor: pointer; /* Додано для відображення курсора як вказівника */
+}
+
+button[type="submit"]:hover { /* Змінено селектор для кнопки "Перевірити відповіді" при наведенні */
+    background-color: #d6272d;
+}
+
+.check-button { /* Цей стиль, схоже, не використовується для кнопки "Перевірити відповіді", тому можна видалити або використовувати для іншої кнопки */
     display: inline-block;
     padding: 12px 24px;
     font-size: 1.1rem;
