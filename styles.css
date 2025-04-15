@@ -176,6 +176,55 @@ button[type="submit"]:hover {
     background-color: #d6272d;
 }
 
+.check-button { /* Цей стиль, схоже, не використовується для кнопки "Перевірити відповіді" */
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #e63946;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.check-button:hover {
+    background-color: #d6272d;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.contact-info h3,
+.contact-info h4 {
+    text-align: center;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 5px;
+}
+
 /* === Стилі для підвалу === */
 footer {
     background-color: #333;
@@ -191,72 +240,209 @@ footer p {
     font-size: 1rem;
 }
 
+/* === Стилі для внутрішніх посилань === */
+ul.internal-links {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+ul.internal-links li {
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+ul.internal-links li:hover {
+    background-color: #007bff;
+    transform: translateY(-5px);
+}
+
+ul.internal-links li a {
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+ul.internal-links li:hover a {
+    color: white;
+}
+
+/* === Стилі для питань тесту === */
+.question {
+    margin-bottom: 30px;
+}
+
+.question p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.answer {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background-color: #e0e0e0;
+}
+
+.answer.selected {
+    background-color: #c0c0c0;
+    color: #333;
+    border-color: #808080;
+}
+
+.answer.correct {
+    background-color: #c2e0c6;
+    border-color: #689f38;
+}
+
+.answer.incorrect {
+    background-color: #f8d7da;
+    border-color: #d32f2f;
+}
+
+.correct-answer {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #689f38;
+}
+
+/* === Стилі для контактної форми === */
+.contact-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #e63946;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #d6272d;
+}
+
 /* === Медіа запити для адаптивного дизайну === */
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Зменшуємо шрифт для мобільних */
+        font-size: 14px;
     }
 
     header h1 {
-        font-size: 1.8rem; /* Зменшуємо шрифт заголовка */
-    }
-
-    .logo {
-        font-size: 1.3rem; /* Зменшуємо розмір логотипу */
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
+        font-size: 1.8rem;
     }
 
     .burger-button {
-        display: flex; /* Показуємо бургер-кнопку */
+        display: flex;
     }
 
     .nav-links {
-        display: none; /* Приховуємо основне меню */
+        display: none;
         flex-direction: column;
+        gap: 10px;
         width: 100%;
         background-color: #333;
-        margin-top: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
     }
 
-    .nav-links.active {
-        display: flex; /* Показуємо меню при кліку на бургер */
+    .nav-links.open {
+        display: flex;
     }
 
     .nav-links li {
-        width: 100%;
-        text-align: left;
-        padding: 10px 20px;
-        border-bottom: 1px solid #555;
-    }
-
-    .nav-links li:last-child {
-        border-bottom: none;
+        text-align: center;
     }
 
     .nav-links li a {
-        display: block;
-        padding: 10px 20px;
-        font-size: 1rem; /* Зменшуємо розмір шрифтів для мобільних */
+        padding: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .logo-container {
+        flex-direction: row;
+    }
+
+    .nav-links li a:hover {
+        background-color: #ffcccc;
     }
 
     section {
-        padding: 20px; /* Зменшуємо відступи в секціях на мобільних */
+        padding: 20px;
     }
 
-    section h2 {
-        font-size: 1.8rem; /* Зменшуємо шрифт заголовка в секціях */
+    .test-button {
+        width: 100%;
     }
 
-    section p {
-        font-size: 1rem; /* Зменшуємо шрифт параграфів */
+    .question p {
+        font-size: 1.1rem;
     }
 
-    .test-button, button[type="submit"] {
-        font-size: 1rem; /* Зменшуємо розмір шрифтів на кнопках */
+    .answer {
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
     }
 }
