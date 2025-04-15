@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Завантаження navbar.html та вставка його в <header>
-    fetch('navbar.html') // Переконайтеся, що шлях правильний
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('header').innerHTML = data;
-        });
-
-    // === 1. Обробка вибору відповіді для тестів ===
     document.querySelectorAll('.answer').forEach(answer => {
         answer.addEventListener('click', function () {
             const answers = this.closest('.question').querySelectorAll('.answer');
@@ -56,14 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     resultDiv.classList.add('fade-in');
                 }, 100);
 
-                startTimer(5 * 60); // Таймер: 5 хв
+                startTimer(5 * 60); 
             });
         });
     } else {
         console.log("Елемент 'testForm' не знайдений.");
     }
 
-    // === 2. Таймер ===
     let timerInterval;
     function startTimer(duration) {
         let timer = duration, minutes, seconds;
@@ -82,12 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    // === 3. Відправка email (не використовується зараз) ===
     function sendEmail() {
         window.location.href = "mailto:tania.hrynda@gmail.com";
     }
 
-    // === 4. Обробка форми контактів ===
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (event) {
@@ -109,11 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Елемент 'contactForm' не знайдений.");
     }
 
-    // === 5. Бургер-меню для мобільних ===
     const burgerButton = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
-    // Перевірка на наявність елементів
     if (burgerButton && navLinks) {
         burgerButton.addEventListener('click', () => {
             navLinks.classList.toggle('active');
