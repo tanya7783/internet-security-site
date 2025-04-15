@@ -40,8 +40,10 @@ header h1 a:hover {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     margin-top: 10px;
+    padding: 0 20px; /* Додано відступи для десктопної навігації */
 }
 
 nav ul li {
@@ -226,11 +228,42 @@ button.test-button:hover {
 
     nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Вирівнювання по лівому краю */
+        position: absolute;
+        top: 60px; /* Під header */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        display: none; /* Приховано за замовчуванням */
+        padding: 0; /* Прибираємо відступи мобільної навігації */
+    }
+
+    nav ul.active {
+        display: flex;
     }
 
     nav ul li {
-        margin-bottom: 10px;
+        width: 100%;
+        padding: 10px 20px;
+        margin: 0;
+        border-bottom: 1px solid #555;
+        text-align: left; /* Вирівнювання тексту по лівому краю */
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+    }
+
+    nav ul li a:hover {
+        background-color: #555;
     }
 
     section {
@@ -248,129 +281,114 @@ button.test-button:hover {
     .contact-info {
         padding: 15px;
     }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Вирівнювання по лівому краю */
+        position: absolute;
+        top: 60px; /* Під header */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        display: none; /* Приховано за замовчуванням */
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        width: 100%;
+        padding: 10px 20px;
+        margin: 0;
+        border-bottom: 1px solid #555;
+        text-align: left; /* Вирівнювання тексту по лівому краю */
+    }
+
+    header nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+    }
+
+    header nav ul li a:hover {
+        background-color: #555;
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Розміщення лого та бургер-кнопки */
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    header .nav-links {
+        display: none; /* Приховуємо десктопні посилання */
+    }
 }
 
-/* Модифікація для меню на головній сторінці */
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+/* Стилі для логотипу в header */
+header .logo a {
+    font-size: 1.5rem; /* Зменшено розмір логотипу на мобільних */
 }
 
-ul.internal-links {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-ul.internal-links li {
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #f0f8ff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-ul.internal-links li:hover {
-    background-color: #007bff;
-    transform: translateY(-5px);
-}
-
-ul.internal-links li a {
-    display: block;
-    color: #007bff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-ul.internal-links li:hover a {
-    color: white;
-}
-
-h3 {
-    font-size: 2rem;
-    margin-top: 40px;
-    color: #333;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.contact-form {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 30px auto;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    background-color: #e63946;
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 5px;
+/* Стилі для бургер-меню (додано) */
+.burger-button {
+    display: none; /* Приховати на десктопних версіях */
+    width: 30px;
+    height: 25px;
+    position: relative;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
+    margin-left: auto; /* Розмістити справа */
+}
+
+.burger-button span {
+    display: block;
+    position: absolute;
+    height: 3px;
     width: 100%;
+    background: #fff; /* Змінено колір на білий, щоб краще видно на темному header */
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
 }
 
-.contact-form button:hover {
-    background-color: #d6272d;
+.burger-button span:nth-child(1) {
+    top: 0px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    margin-top: 40px;
-    border-top: 2px solid #666;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.burger-button span:nth-child(2), .burger-button span:nth-child(3) {
+    top: 9px;
 }
 
-footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: white;
+.burger-button span:nth-child(4) {
+    top: 18px;
+}
+
+.burger-button.open span:nth-child(1) {
+    top: 9px;
+    transform: rotate(45deg);
+}
+
+.burger-button.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.burger-button.open span:nth-child(3) {
+    opacity: 0;
+    left: -60px;
+}
+
+.burger-button.open span:nth-child(4) {
+    top: 9px;
+    transform: rotate(-45deg);
 }
