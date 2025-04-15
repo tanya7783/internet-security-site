@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Завантаження navbar.html та вставка його в <header>
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('header').innerHTML = data;
-        });
+   fetch('navbar.html') // Переконайтеся, що шлях правильний
+    .then(response => response.text())
+    .then(data => {
+        document.querySelector('header').innerHTML = data;
+    });
 
     // === 1. Обробка вибору відповіді для тестів ===
     document.querySelectorAll('.answer').forEach(answer => {
