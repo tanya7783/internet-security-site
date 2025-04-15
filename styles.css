@@ -1,4 +1,4 @@
-/* Загальні стилі */
+/* === Загальні стилі === */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     font-size: 16px;
 }
 
-/* Стилі для шапки */
+/* === Стилі для шапки === */
 header {
     background-color: #333;
     color: #fff;
@@ -31,8 +31,8 @@ header h1 {
 
 /* Стилі для посилання в заголовку */
 header h1 a {
-    color: white; /* Змінено на білий колір */
-    text-decoration: none; /* Видалено підкреслення */
+    color: white;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
@@ -40,7 +40,7 @@ header h1 a:hover {
     color: #ffcccc;
 }
 
-/* Стилі для навігації */
+/* === Стилі для навігації === */
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -140,7 +140,7 @@ section p {
     text-align: justify;
 }
 
-/* Стилі для кнопки "пройти тести" (припускаємо, що такий клас існує) */
+/* === Стилі для кнопки "пройти тести" === */
 .test-button {
     display: inline-block;
     padding: 12px 24px;
@@ -157,8 +157,8 @@ section p {
     background-color: #d6272d;
 }
 
-/* Стилі для кнопки "Перевірити відповіді" */
-button[type="submit"] { /* Змінено селектор для кнопки "Перевірити відповіді" */
+/* === Стилі для кнопки "Перевірити відповіді" === */
+button[type="submit"] {
     display: inline-block;
     padding: 12px 24px;
     font-size: 1.1rem;
@@ -168,15 +168,15 @@ button[type="submit"] { /* Змінено селектор для кнопки "
     text-decoration: none;
     transition: background-color 0.3s ease;
     text-align: center;
-    border: none; /* Додано для видалення стандартної рамки кнопки */
-    cursor: pointer; /* Додано для відображення курсора як вказівника */
+    border: none;
+    cursor: pointer;
 }
 
-button[type="submit"]:hover { /* Змінено селектор для кнопки "Перевірити відповіді" при наведенні */
+button[type="submit"]:hover {
     background-color: #d6272d;
 }
 
-.check-button { /* Цей стиль, схоже, не використовується для кнопки "Перевірити відповіді", тому можна видалити або використовувати для іншої кнопки */
+.check-button { /* Цей стиль, схоже, не використовується для кнопки "Перевірити відповіді" */
     display: inline-block;
     padding: 12px 24px;
     font-size: 1.1rem;
@@ -225,7 +225,7 @@ button[type="submit"]:hover { /* Змінено селектор для кноп
     margin-bottom: 5px;
 }
 
-/* Стилі для підвалу */
+/* === Стилі для підвалу === */
 footer {
     background-color: #333;
     color: white;
@@ -240,7 +240,7 @@ footer p {
     font-size: 1rem;
 }
 
-/* Стилі для внутрішніх посилань */
+/* === Стилі для внутрішніх посилань === */
 ul.internal-links {
     list-style: none;
     padding: 0;
@@ -278,7 +278,7 @@ ul.internal-links li:hover a {
     color: white;
 }
 
-/* Стилі для питань тесту */
+/* === Стилі для питань тесту === */
 .question {
     margin-bottom: 30px;
 }
@@ -327,7 +327,7 @@ ul.internal-links li:hover a {
     color: #689f38;
 }
 
-/* Стилі для контактної форми */
+/* === Стилі для контактної форми === */
 .contact-form {
     margin-bottom: 30px;
     padding: 20px;
@@ -374,7 +374,7 @@ ul.internal-links li:hover a {
     background-color: #d6272d;
 }
 
-/* Медіа запити для адаптивного дизайну */
+/* === Медіа запити для адаптивного дизайну === */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -390,11 +390,11 @@ ul.internal-links li:hover a {
     }
 
     .burger-button {
-        display: flex;
+        display: flex; /* Показуємо бургер-кнопку */
     }
 
     .nav-links {
-        display: none;
+        display: none; /* Приховуємо основне меню */
         flex-direction: column;
         width: 100%;
         background-color: #333;
@@ -402,7 +402,7 @@ ul.internal-links li:hover a {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Показуємо меню при кліку на бургер */
     }
 
     .nav-links li {
