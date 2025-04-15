@@ -1,3 +1,4 @@
+/* Загальні стилі */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@ body {
     font-size: 16px;
 }
 
+/* Стилі для шапки */
 header {
     background-color: #333;
     color: #fff;
@@ -27,9 +29,10 @@ header h1 {
     margin-bottom: 10px;
 }
 
+/* Стилі для посилання в заголовку */
 header h1 a {
-    color: white;
-    text-decoration: none;
+    color: white; /* Змінено на білий колір */
+    text-decoration: none; /* Видалено підкреслення */
     transition: color 0.3s ease;
 }
 
@@ -37,6 +40,7 @@ header h1 a:hover {
     color: #ffcccc;
 }
 
+/* Стилі для навігації */
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -111,7 +115,7 @@ nav {
     background-color: #007bff;
 }
 
-/* === Секції === */
+/* === Стилі для секцій === */
 section {
     max-width: 800px;
     margin: 40px auto;
@@ -201,6 +205,7 @@ section p {
     margin-bottom: 5px;
 }
 
+/* Стилі для підвалу */
 footer {
     background-color: #333;
     color: white;
@@ -215,6 +220,7 @@ footer p {
     font-size: 1rem;
 }
 
+/* Стилі для внутрішніх посилань */
 ul.internal-links {
     list-style: none;
     padding: 0;
@@ -252,6 +258,7 @@ ul.internal-links li:hover a {
     color: white;
 }
 
+/* Стилі для питань тесту */
 .question {
     margin-bottom: 30px;
 }
@@ -300,6 +307,7 @@ ul.internal-links li:hover a {
     color: #689f38;
 }
 
+/* Стилі для контактної форми */
 .contact-form {
     margin-bottom: 30px;
     padding: 20px;
@@ -346,6 +354,7 @@ ul.internal-links li:hover a {
     background-color: #d6272d;
 }
 
+/* Медіа запити для адаптивного дизайну */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
