@@ -1,4 +1,4 @@
-/* ======= ЗАГАЛЬНІ СТИЛІ ======= */
+/* === Глобальні стилі === */
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +13,7 @@ body {
     font-size: 16px;
 }
 
+/* === Хедер === */
 header {
     background-color: #333;
     color: #fff;
@@ -20,20 +21,39 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    text-align: center;
 }
 
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header h1 a:hover {
+    color: #ffcccc;
+}
+
+/* === Навігація === */
 nav {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-.logo a {
-    font-size: 2rem;
-    font-weight: bold;
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
     color: white;
     text-decoration: none;
 }
@@ -42,38 +62,42 @@ nav {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .burger-button span {
     width: 25px;
     height: 3px;
     background-color: white;
-    margin: 4px 0;
-    transition: 0.3s;
+    margin: 3px 0;
+    transition: all 0.3s ease;
 }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
     gap: 20px;
 }
 
-.nav-link {
+.nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
     padding: 8px 16px;
-    transition: background-color 0.3s;
+    font-size: 1.1rem;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-links li a:hover {
     background-color: #e63946;
-    text-decoration: none;
-    color: white;
 }
 
+.nav-link.active {
+    color: white !important;
+    background-color: #007bff;
+}
+
+/* === Секції === */
 section {
     max-width: 800px;
     margin: 40px auto;
@@ -83,51 +107,223 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+section h2 {
     font-size: 2.2rem;
     color: #333;
     margin-bottom: 30px;
     text-align: center;
 }
 
-p {
+section p {
     font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 20px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
     text-align: justify;
 }
 
-.button.test-button {
+/* === Кнопка пройти тест === */
+.test-button {
     display: inline-block;
-    background-color: #e63946;
-    color: white;
     padding: 12px 24px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
     text-align: center;
-    transition: background-color 0.3s;
 }
 
-.button.test-button:hover {
-    background-color: #d6272d;
+.test-button:hover {
+    background-color: #0056b3;
 }
 
+/* === Контактна інформація === */
+.contact-info {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.contact-info h3,
+.contact-info h4 {
+    text-align: center;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 5px;
+}
+
+/* === Підвал === */
 footer {
     background-color: #333;
-    color: #fff;
+    color: white;
     padding: 20px;
     text-align: center;
     margin-top: 40px;
     border-top: 2px solid #666;
 }
 
-/* ======= МОБІЛЬНІ ПРИСТРОЇ ======= */
-@media (max-width: 768px) {
-    .logo a {
-        font-size: 1.6rem;
-    }
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
 
+/* === Блок із внутрішніми посиланнями === */
+ul.internal-links {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+ul.internal-links li {
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+ul.internal-links li:hover {
+    background-color: #007bff;
+    transform: translateY(-5px);
+}
+
+ul.internal-links li a {
+    color: #007bff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+ul.internal-links li:hover a {
+    color: white;
+}
+
+/* === Тести === */
+.question {
+    margin-bottom: 30px;
+}
+
+.question p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.answer {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background-color: #e0e0e0;
+}
+
+.answer.selected {
+    background-color: #c0c0c0;
+    color: #333;
+    border-color: #808080;
+}
+
+.answer.correct {
+    background-color: #c2e0c6;
+    border-color: #689f38;
+}
+
+.answer.incorrect {
+    background-color: #f8d7da;
+    border-color: #d32f2f;
+}
+
+.correct-answer {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #689f38;
+}
+
+/* === Контактна форма === */
+.contact-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #e63946;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #d6272d;
+}
+
+/* === Мобільні стилі === */
+@media (max-width: 768px) {
     .burger-button {
         display: flex;
     }
@@ -135,73 +331,41 @@ footer {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #444;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0;
         position: absolute;
         top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 20px 0;
+        left: 0;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .nav-link {
+    .nav-links li {
         text-align: center;
-        padding: 10px 0;
-        font-size: 1.2rem;
-        color: white;
+        margin: 10px 0;
     }
 
-    h2 {
-        font-size: 1.6rem;
-        color: white;
+    header h1 {
+        font-size: 2rem;
     }
 
     section {
         padding: 20px;
     }
 
-    p {
-        font-size: 1rem;
-        color: white;
+    section h2 {
+        font-size: 1.6rem;
     }
 
-    .button.test-button {
+    section p {
         font-size: 1rem;
+    }
+
+    .test-button {
         width: 100%;
-    }
-}
-
-/* ======= ПК / ВЕЛИКІ ЕКРАНИ ======= */
-@media (min-width: 769px) {
-    .logo a {
-        font-size: 2.5rem;
-        text-align: center;
-        display: block;
-    }
-
-    .nav-links {
-        justify-content: center;
-    }
-
-    .nav-link {
-        font-size: 1.1rem;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-        color: white;
-    }
-
-    p {
-        font-size: 1.1rem;
-        color: white;
-    }
-
-    .button.test-button {
-        font-size: 1.1rem;
-        width: auto;
+        font-size: 1rem;
     }
 }
