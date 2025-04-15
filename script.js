@@ -1,17 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Обробка вибору відповіді
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.answer').forEach(answer => {
-        answer.addEventListener('click', function() {
+        answer.addEventListener('click', function () {
             const answers = this.closest('.question').querySelectorAll('.answer');
             answers.forEach(ans => ans.classList.remove('selected'));
             this.classList.add('selected');
         });
     });
 
-    // Перевірка та обробка відправки форми для тесту
     const testForm = document.getElementById('testForm');
     if (testForm) {
-        testForm.addEventListener('submit', function(event) {
+        testForm.addEventListener('submit', function (event) {
             event.preventDefault();
             let score = 0;
             document.querySelectorAll('.question').forEach(question => {
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const answers = question.querySelectorAll('.answer');
                 const correctAnswerText = question.querySelector('.correct-answer');
 
-                // Очищення старих класів
                 answers.forEach(answer => {
                     answer.classList.remove('correct', 'incorrect');
                 });
@@ -37,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     correctAnswerText.style.display = 'block';
                 }
 
-                // Відображення правильних відповідей
                 answers.forEach(answer => {
                     if (answer.getAttribute('data-correct') === 'true') {
                         answer.classList.add('correct');
@@ -45,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
 
-            // Виведення результату
             const resultDiv = document.createElement('div');
             resultDiv.classList.add('result');
             resultDiv.innerHTML = `Ваш результат: ${score} з ${document.querySelectorAll('.question').length}`;
@@ -54,21 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 resultDiv.classList.add('fade-in');
             }, 100);
 
-            startTimer(5 * 60);  // Запуск таймера на 5 хвилин
+            startTimer(5 * 60); // Таймер: 5 хв
         });
     } else {
         console.log("Елемент 'testForm' не знайдений.");
     }
 
+    // === 3. Таймер ===
     let timerInterval;
-    // Функція для запуску таймера
     function startTimer(duration) {
         let timer = duration, minutes, seconds;
         timerInterval = setInterval(function () {
             minutes = Math.floor(timer / 60);
             seconds = timer % 60;
-
-            document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            const timerEl = document.getElementById('timer');
+            if (timerEl) {
+                timerEl.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            }
 
             if (--timer < 0) {
                 clearInterval(timerInterval);
@@ -77,15 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 
-    // Функція для відправки email
+    // === 4. Відправка email (не використовується зараз) ===
     function sendEmail() {
         window.location.href = "mailto:tania.hrynda@gmail.com";
     }
 
-    // Обробка форми контактів
+    // === 5. Обробка форми контактів ===
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
+        contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -104,33 +101,16 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Елемент 'contactForm' не знайдений.");
     }
 
-    // Отримуємо елементи меню та кнопку бургер-меню
-    const burgerButton = document.querySelector('.burger-button');
-    const sidebarMenu = document.querySelector('nav ul');
+    // === 6. Бургер-меню ===
+    const burgerButton = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Додаємо обробник подій на клік по кнопці бургер-меню
-    if (burgerButton && sidebarMenu) {
-        burgerButton.addEventListener('click', () => {
-            // Перемикаємо клас для відкриття/закриття меню
-            sidebarMenu.classList.toggle('active');
+    if (burgerButton && navLinks) {
+        burgerButton.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+            burgerButton.classList.toggle('active');
         });
     } else {
-        console.log("Бургер-меню або бічне меню не знайдено.");
-    }
-
-    // Обробка бургер-меню для мобільної версії
-    const mobileMenuButton = document.getElementById('mobile-menu');
-    if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', function() {
-            const nav = document.getElementById('mainNav');
-            if (nav) {
-                nav.classList.toggle('active'); // Перемикає клас "active" для меню
-                mobileMenuButton.classList.toggle('active'); // Перемикає клас "active" для бургер-меню
-            } else {
-                console.log("Меню не знайдено.");
-            }
-        });
-    } else {
-        console.log("Кнопка мобільного меню не знайдена.");
+        console.log("Бургер-меню або навігація не знайдені.");
     }
 });
