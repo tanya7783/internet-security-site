@@ -1,4 +1,4 @@
-/* Загальні стилі */
+/* ======= ЗАГАЛЬНІ СТИЛІ ======= */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,6 @@ body {
     font-size: 16px;
 }
 
-/* Хедер та навігація */
 header {
     background-color: #333;
     color: #fff;
@@ -25,45 +24,56 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .logo a {
-    color: white;
-    text-decoration: none;
     font-size: 2rem;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.burger-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-button span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
+    list-style: none;
     gap: 20px;
 }
 
-.nav-links li a {
-    color: #fff;
+.nav-link {
+    color: white;
     text-decoration: none;
     font-size: 1.1rem;
     padding: 8px 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
     border-radius: 5px;
 }
 
-.nav-links li a:hover {
+.nav-link:hover,
+.nav-link.active {
     background-color: #e63946;
+    text-decoration: none;
+    color: white;
 }
 
-/* Активне посилання */
-.nav-links li a.active {
-    background-color: #555;
-}
-
-/* Секції */
 section {
     max-width: 800px;
     margin: 40px auto;
@@ -73,126 +83,125 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-section h2 {
+h2 {
     font-size: 2.2rem;
     color: #333;
     margin-bottom: 30px;
     text-align: center;
 }
 
-section p {
+p {
     font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
     text-align: justify;
 }
 
-/* Кнопка "Пройти тести" */
-.test-button {
+.button.test-button {
     display: inline-block;
     background-color: #e63946;
     color: white;
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    border: none;
+    padding: 12px 24px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: background-color 0.3s;
 }
 
-.test-button:hover {
+.button.test-button:hover {
     background-color: #d6272d;
 }
 
-/* Футер */
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
     margin-top: 40px;
+    border-top: 2px solid #666;
 }
 
-/* Бургер-меню */
-.burger-button {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    justify-content: space-between;
-}
-
-.burger-button span {
-    height: 4px;
-    width: 100%;
-    background-color: white;
-    display: block;
-    border-radius: 2px;
-}
-
-/* Адаптивність */
+/* ======= МОБІЛЬНІ ПРИСТРОЇ ======= */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        z-index: 1000;
-    }
-
-    .nav-links.show {
-        display: flex;
+    .logo a {
+        font-size: 1.6rem;
     }
 
     .burger-button {
         display: flex;
     }
 
-    nav {
+    .nav-links {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
+        background-color: #444;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
     }
 
-    .logo {
-        width: 100%;
+    .nav-links.active {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
-    .logo a {
-        font-size: 1.5rem;
-    }
-
-    .nav-links li {
-        width: 100%;
+    .nav-link {
         text-align: center;
-        border-top: 1px solid #444;
-        padding: 15px 0;
+        padding: 10px 0;
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        color: white;
     }
 
     section {
         padding: 20px;
     }
 
-    section h2 {
-        font-size: 1.6rem;
-    }
-
-    section p {
+    p {
         font-size: 1rem;
+        color: white;
     }
 
-    .test-button {
+    .button.test-button {
+        font-size: 1rem;
         width: 100%;
+    }
+}
+
+/* ======= ПК / ВЕЛИКІ ЕКРАНИ ======= */
+@media (min-width: 769px) {
+    .logo a {
+        font-size: 2.5rem;
         text-align: center;
+        display: block;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        color: white;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: white;
+    }
+
+    .button.test-button {
+        font-size: 1.1rem;
+        width: auto;
     }
 }
