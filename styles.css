@@ -31,7 +31,7 @@ header h1 {
 
 header h1 a {
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* Без підкреслення */
     transition: color 0.3s ease;
 }
 
@@ -128,7 +128,7 @@ section p {
     padding: 12px 24px;
     font-size: 1.1rem;
     color: white;
-    background-color: #007bff;
+    background-color: #e63946; /* Червоний колір */
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -136,7 +136,7 @@ section p {
 }
 
 .test-button:hover {
-    background-color: #0056b3;
+    background-color: #d6272d; /* Темніший червоний */
 }
 
 /* === Контактна інформація === */
@@ -307,7 +307,7 @@ ul.internal-links li:hover a {
 }
 
 .contact-form button {
-    background-color: #e63946;
+    background-color: #e63946; /* Червона кнопка */
     color: white;
     padding: 14px;
     border: none;
