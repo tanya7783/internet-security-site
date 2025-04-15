@@ -1,4 +1,4 @@
-/* Загальні стилі */
+/* === Загальні стилі === */
 * {
     margin: 0;
     padding: 0;
@@ -6,20 +6,43 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    padding-top: 70px; /* щоб контент не ховався під хедером */
 }
 
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+p, li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* === Header і навігація === */
 header {
     background-color: #000;
-    color: white;
-    position: fixed;
-    width: 100%;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 1000;
 }
 
@@ -27,27 +50,35 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
 }
 
 .nav-links {
     display: flex;
+    gap: 1.5rem;
     list-style: none;
-    gap: 20px;
 }
 
-.nav-links li a {
-    color: white;
+.nav-links a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-    color: #ff9900;
+.nav-links a:hover {
+    color: #f0a500;
 }
 
-/* Бургер-кнопка */
+/* === Footer === */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* === Бургер-меню === */
 .burger-button {
     display: none;
     flex-direction: column;
@@ -58,14 +89,13 @@ nav {
 .burger-button span {
     height: 3px;
     width: 25px;
-    background-color: white;
+    background: #fff;
     transition: all 0.3s ease;
+    display: block;
 }
 
-/* Анімація бургер-кнопки при активному меню */
 .burger-button.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: black;
 }
 
 .burger-button.active span:nth-child(2) {
@@ -73,30 +103,9 @@ nav {
 }
 
 .burger-button.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-    background-color: black;
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Секції */
-section {
-    padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    margin-bottom: 2rem;
-}
-
-/* Футер */
-footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
-/* Адаптивність */
 @media screen and (max-width: 768px) {
     .burger-button {
         display: flex;
@@ -104,36 +113,130 @@ footer {
 
     .nav-links {
         position: absolute;
-        top: 60px;
-        left: 0;
+        top: 70px;
         right: 0;
-        background-color: white;
+        height: 100vh;
+        width: 250px;
+        background-color: #000;
         flex-direction: column;
         align-items: center;
-        display: none;
-        padding: 1rem 0;
+        justify-content: start;
+        gap: 2rem;
+        padding-top: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
     }
 
     .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li a {
-        color: black;
-        font-size: 18px;
+        transform: translateX(0);
     }
 }
 
-/* Додаткові стилі */
-h1, h2, h3 {
-    margin-bottom: 10px;
+/* === Форми === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
 }
 
-ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
+input, textarea, button {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-p {
-    margin-bottom: 10px;
+button {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0a500;
+    color: #000;
+}
+
+/* === Тести, матеріали, таблиці === */
+.test-container, .materials-container {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.test-question {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.answer-option {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.answer-option:hover {
+    background-color: #f0f0f0;
+}
+
+.answer-option.correct {
+    background-color: #c8f7c5;
+    border-color: #28a745;
+}
+
+.answer-option.incorrect {
+    background-color: #f7c5c5;
+    border-color: #dc3545;
+}
+
+/* === Контакти, карта === */
+.map {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* === Додаткові стилі для адаптації === */
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.25rem;
+    }
+
+    p, li {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+}
+
+/* === Анімації === */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
