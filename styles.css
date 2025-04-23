@@ -1,40 +1,34 @@
-/* Загальні стилі (Темна тема) */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1e1e1e; /* Темно-сірий фон */
-    color: #dcdcdc; /* Світло-сірий колір тексту */
+    background-color: #1e1e1e; 
+    color: #dcdcdc; 
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease; /* Плавний перехід для можливої зміни теми */
+    transition: background-color 0.3s ease; 
 }
-
 h1, h2, h3, h4, h5, h6 {
-    color: #f8f8f2; /* Світлий колір для заголовків */
+    color: #f8f8f2; 
     font-weight: 700;
     margin-top: 1.5em;
     margin-bottom: 1em;
 }
-
 p {
     margin-bottom: 1.5em;
     font-size: 1rem;
     color: #eee;
 }
-
 a {
-    color: #66d9ef; /* Акцентний блакитний колір для посилань */
+    color: #66d9ef; 
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 a:hover {
-    color: #a6e3a1; /* Акцентний світло-зелений при наведенні */
+    color: #a6e3a1; 
 }
-
-/* Шапка сайту (Темна тема) */
 header {
     background-color: #282a36;
     padding: 1.5em 2em;
@@ -48,8 +42,8 @@ header {
 .logo {
     font-size: 1.75em;
     font-weight: bold;
-    color: #50fa7b; /* Акцентний зелений колір логотипу */
-    animation: pulse 1.5s infinite alternate; /* Анімація пульсації логотипу */
+    color: #50fa7b; 
+    animation: pulse 1.5s infinite alternate; 
 }
 
 @keyframes pulse {
@@ -60,8 +54,6 @@ header {
         transform: scale(1.05);
     }
 }
-
-/* Навігація (Темна тема) */
 nav ul {
     list-style: none;
     padding: 0;
@@ -81,28 +73,26 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #44475a; /* Темніший фон при наведенні */
+    background-color: #44475a; 
     color: #f8f8f2;
-    transform: translateY(-2px); /* Легке підняття при наведенні */
+    transform: translateY(-2px); 
 }
-
-/* Бургер-меню (Темна тема) - ОНОВЛЕНО */
 .burger {
     display: none;
     cursor: pointer;
-    padding: 10px; /* Збільшено відступи для зручності натискання */
+    padding: 10px; 
     border: none;
     background: none;
-    position: relative; /* Для позиціонування анімації */
-    z-index: 101; /* Щоб бургер був над випадаючим меню */
+    position: relative; 
+    z-index: 101; 
 }
 
 .burger span {
     display: block;
-    width: 30px; /* Збільшено ширину */
-    height: 4px; /* Збільшено висоту */
-    background-color: #f8f8f2; /* Світлий колір смужок */
-    margin: 6px auto; /* Збільшено відступи між смужками */
+    width: 30px; 
+    height: 4px; 
+    background-color: #f8f8f2; 
+    margin: 6px auto; 
     transition: all 0.3s ease-in-out;
 }
 
@@ -111,14 +101,12 @@ nav a:hover {
 }
 
 .burger.open span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg); /* Змінено значення для кращого вигляду хрестика */
+    transform: translateY(10px) rotate(45deg); 
 }
 
 .burger.open span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg); /* Змінено значення для кращого вигляду хрестика */
+    transform: translateY(-10px) rotate(-45deg); 
 }
-
-/* Медіа-запит для мобільних пристроїв - ОНОВЛЕНО */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -154,8 +142,8 @@ nav a:hover {
     }
 
     nav a {
-        padding: 1.2em 1.5em; /* Збільшено відступи в меню */
-        font-size: 1.1rem; /* Трохи більший шрифт в меню */
+        padding: 1.2em 1.5em; 
+        font-size: 1.1rem; 
     }
 
     .burger {
@@ -167,7 +155,6 @@ nav a:hover {
     }
 }
 
-/* Основний контент (Темна тема) */
 section {
     padding: 2em;
     margin: 2em auto;
@@ -175,7 +162,7 @@ section {
     background-color: #282a36;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
-    animation: fadeIn 0.5s ease-out; /* Анімація появи секції */
+    animation: fadeIn 0.5s ease-out; 
 }
 
 @keyframes fadeIn {
@@ -189,13 +176,12 @@ section {
     }
 }
 
-/* Кнопки (Темна тема) */
 .button {
     display: inline-block;
     padding: 0.75em 1.5em;
     border: none;
     border-radius: 0.25rem;
-    background-color: #6272a4; /* Темно-синій колір кнопок */
+    background-color: #6272a4; 
     color: #f8f8f2;
     font-size: 1rem;
     cursor: pointer;
@@ -213,7 +199,7 @@ section {
 }
 
 .test-button {
-    background-color: #8be9fd; /* Акцентний блакитний для кнопки тесту */
+    background-color: #8be9fd; 
     color: #282a36;
 }
 
@@ -221,7 +207,6 @@ section {
     background-color: #66d9ef;
 }
 
-/* Форма контактів (Темна тема) */
 #contactForm label {
     display: block;
     margin-bottom: 0.5em;
@@ -261,22 +246,20 @@ section {
     display: none;
     padding: 1em;
     margin-top: 1em;
-    background-color: #50fa7b22; /* Напівпрозорий зелений */
+    background-color: #50fa7b22; 
     color: #50fa7b;
     border: 1px solid #50fa7b;
     border-radius: 0.25rem;
 }
 
-/* Карта на сторінці контактів (Темна тема) */
 #map-container {
     width: 100%;
     height: 300px;
-    background-color: #44475a; /* Темний фон для карти */
+    background-color: #44475a; 
     border-radius: 0.25rem;
     margin-bottom: 1.5em;
 }
 
-/* Стилізація сторінки "Тести" (Темна тема) */
 .question {
     margin-bottom: 2em;
     padding: 1.5em;
@@ -304,7 +287,7 @@ section {
 .answer:hover {
     background-color: #54586a;
     border-color: #bdc3c7;
-    transform: translateX(5px); /* Легкий зсув при наведенні */
+    transform: translateX(5px); 
 }
 
 .answer.selected {
@@ -336,7 +319,7 @@ section {
 #testForm button[type="submit"] {
     @extend .button;
     margin-top: 1em;
-    animation: pulseButton 2s infinite alternate; /* Анімація пульсації кнопки тесту */
+    animation: pulseButton 2s infinite alternate; 
 }
 
 @keyframes pulseButton {
@@ -367,7 +350,6 @@ section {
     transform: translateY(0);
 }
 
-/* Таймер для тестів (Темна тема) */
 #timer {
     font-size: 1.2rem;
     font-weight: bold;
@@ -376,7 +358,6 @@ section {
     margin-top: 1em;
 }
 
-/* Футер (Темна тема) */
 footer {
     text-align: center;
     padding: 1.5em;
@@ -385,7 +366,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Додаткові анімації */
 nav a {
     position: relative;
     overflow: hidden;
